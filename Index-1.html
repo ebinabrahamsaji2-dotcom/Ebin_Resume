@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ebin Abraham Saji – Resume</title>
+  <meta name="description" content="Creative vibrant animated resume website for Ebin Abraham Saji." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <style>
+    :root{
+      --bg: #0b1220;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --brand: #0ea5e9;
+      --brand-2: #22d3ee;
+      --shadow: 0 6px 20px rgba(0,0,0,.4);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: system-ui, -apple-system, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    a{color:var(--brand);text-decoration:none}
+    header{
+      position:sticky;top:0;z-index:100;
+      background:rgba(11,18,32,.95);
+      backdrop-filter:blur(10px);
+      box-shadow:0 4px 12px rgba(0,0,0,.3);
+      animation:slideDown 1s ease;
+    }
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 20px}
+    .brand{font-weight:700;font-size:18px;display:flex;align-items:center;gap:8px;color:var(--brand);animation:pulseGlow 2s infinite alternate}
+    .nav-links{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;transition:max-height .3s ease;overflow:hidden}
+    .nav-links a{position:relative;transition:color .3s}
+    .nav-links a::after{content:"";position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--brand-2);transition:.3s}
+    .nav-links a:hover{color:var(--brand-2)}
+    .nav-links a:hover::after{width:100%}
+    .menu-toggle{display:none;font-size:22px;background:none;border:none;color:var(--text);cursor:pointer}
+    @media(max-width:720px){.nav-links{flex-direction:column;max-height:0;width:100%}.nav-links.open{max-height:300px}.menu-toggle{display:block}}
+    .container{max-width:1000px;margin:auto;padding:20px}
+    .card{background:var(--card);border-radius:16px;padding:20px;box-shadow:var(--shadow);margin-bottom:20px;opacity:0;transform:translateY(40px);transition:all .8s ease}
+    .card.show{opacity:1;transform:translateY(0)}
+    h1,h2,h3{margin-bottom:10px}
+    h1{font-size:28px;color:var(--brand);animation:gradientText 5s infinite alternate}
+    h2{font-size:22px;color:var(--brand-2)}
+    h3{font-size:18px;color:var(--brand)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 12px;border-radius:999px;background:linear-gradient(135deg,rgba(14,165,233,.2),rgba(34,211,238,.2));border:1px solid rgba(255,255,255,.15);font-size:13px;transition:.3s;cursor:default;animation:float 4s ease-in-out infinite}
+    .chip:hover{transform:scale(1.15)}
+    .btn{padding:10px 16px;border:none;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#001826;font-weight:600;cursor:pointer;transition:transform .3s,box-shadow .3s;animation:pop 2s infinite alternate}
+    .btn:hover{transform:translateY(-2px) scale(1.1);box-shadow:0 6px 16px rgba(0,0,0,.3)}
+    .timeline{position:relative;padding-left:18px}
+    .timeline:before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand),transparent)}
+    .timeline .node{margin-bottom:16px;position:relative;opacity:0;transform:translateX(-30px);transition:all .8s ease}
+    .timeline .node.show{opacity:1;transform:translateX(0)}
+    .timeline .node:before{content:"";position:absolute;left:-14px;top:.6em;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 12px var(--brand)}
+    .footer{text-align:center;font-size:13px;padding:20px;color:var(--muted)}
+
+    /* Animated background */
+    .bg-bubbles li{
+      position:absolute;list-style:none;display:block;width:20px;height:20px;background:rgba(34,211,238,0.25);bottom:-160px;animation:rise 20s infinite linear;border-radius:50%}
+    .bg-bubbles li:nth-child(1){left:10%;animation-duration:15s;width:25px;height:25px}
+    .bg-bubbles li:nth-child(2){left:20%;animation-duration:20s;animation-delay:2s}
+    .bg-bubbles li:nth-child(3){left:25%;animation-duration:25s;animation-delay:4s;width:30px;height:30px}
+    .bg-bubbles li:nth-child(4){left:40%;animation-duration:22s;animation-delay:1s}
+    .bg-bubbles li:nth-child(5){left:70%;animation-duration:18s;animation-delay:3s;width:35px;height:35px}
+    .bg-bubbles li:nth-child(6){left:80%;animation-duration:20s;animation-delay:5s}
+    .bg-bubbles li:nth-child(7){left:90%;animation-duration:25s;animation-delay:7s;width:40px;height:40px}
+
+    /* Keyframes */
+    @keyframes slideDown{from{transform:translateY(-100%);}to{transform:translateY(0);}}
+    @keyframes gradientText{0%{color:var(--brand);}100%{color:var(--brand-2);}}
+    @keyframes pulseGlow{0%{text-shadow:0 0 5px var(--brand);}100%{text-shadow:0 0 15px var(--brand-2);}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    @keyframes pop{0%{transform:scale(1)}100%{transform:scale(1.05)}}
+    @keyframes rise{0%{transform:translateY(0) rotate(0deg)}100%{transform:translateY(-1200px) rotate(360deg)}}
+  </style>
+</head>
+<body>
+  <ul class="bg-bubbles">
+    <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+  </ul>
+
+  <header>
+    <div class="nav-inner container">
+      <div class="brand">🌟 Ebin A. Saji</div>
+      <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#awards">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h1>Ebin Abraham Saji</h1>
+      <p>Customer Service & Operations Specialist with 3+ years of experience in store management, client relations, and administration.</p>
+      <div class="chips">
+        <span class="chip">Store Management</span>
+        <span class="chip">Client Relations</span>
+        <span class="chip">Cash Handling</span>
+        <span class="chip">Administration</span>
+      </div>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>A dedicated and results-driven professional with experience in customer service, operations support, and team management. Thrives in fast-paced environments and passionate about continuous growth.</p>
+    </section>
+
+    <section id="experience" class="card">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <div class="node">
+          <h3>Manager — Novelty Bazar (2020 – 2023)</h3>
+          <ul>
+            <li>Managed store operations and inventory flow.</li>
+            <li>Supervised staff and schedules.</li>
+            <li>Delivered high customer satisfaction.</li>
+          </ul>
+        </div>
+        <div class="node">
+          <h3>Associate — Zangos (6 months)</h3>
+          <ul>
+            <li>Handled customer inquiries and cashier duties.</li>
+            <li>Maintained hygiene and service standards.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="card">
+      <h2>Education</h2>
+      <p><strong>B.Com (CA)</strong>, St. Berchmans College, 2019</p>
+      <p><strong>12th Grade</strong>, Girideepam Bethany School</p>
+    </section>
+
+    <section id="skills" class="card">
+      <h2>Skills</h2>
+      <div class="chips">
+        <span class="chip">Communication</span>
+        <span class="chip">Customer Service</span>
+        <span class="chip">POS Operations</span>
+        <span class="chip">Clerical Support</span>
+      </div>
+    </section>
+
+    <section id="awards" class="card">
+      <h2>Achievements</h2>
+      <ul>
+        <li>Active participant in Commerce Fest.</li>
+        <li>Winner in football, cricket, and Kolkali events.</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact Me</h2>
+      <a class="btn" href="https://wa.me/917012891061">WhatsApp</a>
+      <a class="btn" href="mailto:ebinabrahamsaji2@gmail.com">Email</a>
+      <a class="btn" href="tel:+917012891061">Call</a>
+    </section>
+
+    <footer class="footer">© <span id="year"></span> Ebin Abraham Saji</footer>
+  </main>
+
+  <script>
+    document.getElementById('year').textContent=new Date().getFullYear();
+    const cards=document.querySelectorAll('.card');
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('show');}
+      });
+    },{threshold:.2});
+    cards.forEach(card=>observer.observe(card));
+
+    const nodes=document.querySelectorAll('.timeline .node');
+    const observer2=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){entry.target.classList.add('show');}
+      });
+    },{threshold:.2});
+    nodes.forEach(node=>observer2.observe(node));
+  </script>
+</body>
+</html>
